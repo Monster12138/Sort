@@ -24,8 +24,8 @@ int main()
 {
 	int arr[10] = { 0,2,1,4,3,5,6,9,8,7 };
 	PrintArr(arr, 10);
-	InsertionSort(arr, 10);
+	QuickSort(arr, 10, greater<int>());
 	PrintArr(arr, 10);
-
+	
 	return 0;
 }
