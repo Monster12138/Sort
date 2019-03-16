@@ -1,6 +1,11 @@
 #ifndef _QUICK_SORT_HPP_
 #define _QUICK_SORT_HPP_
 
+#include <unistd.h>
+#include <functional>
+#include <algorithm>
+#include <iostream>
+
 template<typename T, typename _CmpFunc>
 int partion(T *arr, size_t left, size_t right, _CmpFunc cmp)
 {
@@ -14,7 +19,7 @@ int partion(T *arr, size_t left, size_t right, _CmpFunc cmp)
 
 		if (i < j)
 		{
-			swap(arr[i], arr[j]);
+			std::swap(arr[i], arr[j]);
 		}
 	}
 
@@ -26,7 +31,7 @@ void QuickSortCall(T *arr, size_t left, size_t right, _CmpFunc cmp)
 {
 	if (left + 1 < right)
 	{
-		cout << left << " " << right << endl;
+		std::cout << left << " " << right << std::endl;
 		int div = partion(arr, left, right, cmp);
 		QuickSortCall(arr, left, div, cmp);
 		QuickSortCall(arr, div, right, cmp);

@@ -1,6 +1,11 @@
 #ifndef _INSERTION_SORT_HPP
 #define _INSERTION_SORT_HPP_
 
+#include <unistd.h>
+#include <functional>
+#include <algorithm>
+#include <iostream>
+
 template<typename T, typename >
 void InsertionSort(T* arr, size_t size, bool cmp(const T& lvalue, const T& rvalue))
 {
@@ -46,7 +51,7 @@ void InsertionSort(T* arr, size_t size, _CmpFunc cmp)
 template<typename T>
 void InsertionSort(T* arr, size_t size)
 {
-	InsertionSort(arr, size, less<T>());
+	InsertionSort(arr, size, std::less<T>());
 }
 
 template<typename T, typename _CmpFunc>
@@ -74,6 +79,6 @@ void ShellSort(T* arr, size_t size, _CmpFunc cmp)
 template<typename T>
 void ShellSort(T* arr, size_t size)
 {
-	ShellSort(arr, size, less<T>())
+	ShellSort(arr, size, std::less<T>());
 }
 #endif // !_INSERTION_SORT_HPP
